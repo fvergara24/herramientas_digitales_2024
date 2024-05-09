@@ -7,6 +7,6 @@ st.set_page_config(page_title='Herramientas 2024 digitales en español', page_ic
 st.image('Logo.jpg')
 st.title('Herramientas digitales 2024 en español')
 
-socialmedia=pd.read_csv('social-media.csv')
+social-media=pd.read_csv('social-media.csv')
 
-st.dataframe(socialmedia)
+st.dataframe(social-media)
