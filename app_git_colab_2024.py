@@ -2,7 +2,7 @@
 import streamlit as st
 import pandas as pd
 
-st.set_page_config(page_title='Herramientas 2024 digitales en español')#, page_icon='favicon.jpg')
+st.set_page_config(page_title='Herramientas 2024 digitales en español', page_icon='favicon.jpg')
 # st.write('↖ Categorias')
-#st.image('Logo.jpg')
+st.image('Logo.jpg')
 st.title('Herramientas digitales 2024 en español')
