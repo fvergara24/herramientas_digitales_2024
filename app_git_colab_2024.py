@@ -9,4 +9,4 @@ st.title('Herramientas digitales 2024 en español')
 
 socialmedia=pd.read_csv('social-media.csv')
 
-st.dataframe(socialmedia)
+st.table(socialmedia.iloc[0:10])
