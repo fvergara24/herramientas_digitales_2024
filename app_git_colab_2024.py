@@ -89,3 +89,31 @@ else:
 with st.sidebar:
   st.header('Categorias')
   st.multiselect("",categorias)
+  def display_category(data, category_name):
+    """Displays a category's data (title, description) within a Streamlit card.
+
+    Args:
+        data (pandas.DataFrame): The DataFrame containing category data.
+        category_name (str): The name of the currently selected category.
+    """
+    for i in range(len(data)):
+      title = data.iloc[i][0]
+      description = data.iloc[i][1]
+      st.write(f"{title}(%s)" % data.iloc[i][2])  # Assuming data has format (title, description, ...)
+      st.caption(description)
+
+  # Create a dictionary to store DataFrames by category (replace with your actual data)
+  data_by_category = {
+                     'research-assistant',research-assistant
+                     'translators',translators
+                     'presentations',presentations
+                      }
+
+  # Selectbox for category filtering
+  choice = st.selectbox("", list(data_by_category.keys()))
+
+  # Display data based on selected category
+  if choice:
+    display_category(data_by_category[choice], choice)
+    st.success(f"You selected: {choice}")  # Add success message (optional)
+
