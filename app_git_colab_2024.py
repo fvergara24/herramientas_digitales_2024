@@ -5,7 +5,7 @@ import pandas as pd
 st.set_page_config(page_title='Herramientas 2024 digitales en español', page_icon='favicon.jpg')
 # st.write('↖ Categorias')
 st.image('Logo.jpg')
-st.markdown("<h1 style='text-align: center; color: red;'>Herramientas digitales 2024 en español</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: blue;'>Herramientas digitales 2024 en español</h1>", unsafe_allow_html=True)
 
 
 #st.title('Herramientas digitales 2024 en español')
