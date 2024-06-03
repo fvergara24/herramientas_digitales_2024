@@ -46,9 +46,6 @@ categorias = ['research-assistant',
  'code-assistant',
  'no-code']
 
-st.multiselect("",categorias)
-
-
 df=pd.read_csv('todos')
 #df=df.drop(columns='Unnamed: 0',axis=1)
 
@@ -91,3 +88,8 @@ else:
         st.write(f"{[df_columna2.iloc[i][0]]}(%s)" % df_columna2.iloc[i][2])
         st.caption(df_columna2.iloc[i][1])
         #st.image(df_columna2.iloc[1][3], caption=df_columna2.iloc[1][2])
+
+
+with st.sidebar:
+  st.header('Categorias')
+  st.multiselect("",categorias)
