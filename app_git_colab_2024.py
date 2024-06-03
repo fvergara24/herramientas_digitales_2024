@@ -2,8 +2,10 @@
 import streamlit as st
 import pandas as pd
 
-st.markdown("<h1 style='text-align: center; color: blue;'>Herramientas digitales 2024     en español</h1>", unsafe_allow_html=True)
 st.set_page_config(page_title='Herramientas 2024 digitales en español', page_icon='favicon.jpg')
+# st.write('↖ Categorias')
+
+st.markdown("<h1 style='text-align: center; color: blue;'>Herramientas digitales 2024     en español</h1>", unsafe_allow_html=True)
 
 left_co, cent_co,last_co = st.columns(3)
 with cent_co:
@@ -42,9 +44,12 @@ categorias = ['research-assistant',
  'no-code']
 
 df=pd.read_csv('todos')
+#df=df.drop(columns='Unnamed: 0',axis=1)
 
 df_columna1=df.iloc[:round(len(df)/2),:]
 df_columna2=df.iloc[round(len(df)/2):,:]
+
+#imagen1=df['Imagenes_url'][0]+'.jpg'
 
 text=st.text_input('Buscar aplicaciones','')
 text = text.lower()
@@ -68,18 +73,18 @@ else:
       col1, col2= st.columns(2)
 
       with col1:
-          for i in range(len(df_columna1)):
-            #original_title = '<p style="font-family:Courier; color:Blue; font-size: 20px;">f"{[df_columna1.iloc[i][0]]}(%s)" % df_columna1.iloc[i][2]</p>'
-            #st.markdown(original_title, unsafe_allow_html=True)
-            st.write(f"{[df_columna1.iloc[i][0]]}(%s)" % df_columna1.iloc[i][2])
-            st.caption(df_columna1.iloc[i][1])
-            #st.image(df_columna1.iloc[0][3], caption=df_columna1.iloc[0][3], use_column_width='auto')
+        for i in range(len(df_columna1)):
+          #original_title = '<p style="font-family:Courier; color:Blue; font-size: 20px;">f"{[df_columna1.iloc[i][0]]}(%s)" % df_columna1.iloc[i][2]</p>'
+          #st.markdown(original_title, unsafe_allow_html=True)
+          st.write(f"{[df_columna1.iloc[i][0]]}(%s)" % df_columna1.iloc[i][2])
+          st.caption(df_columna1.iloc[i][1])
+          #st.image(df_columna1.iloc[0][3], caption=df_columna1.iloc[0][3], use_column_width='auto')
 
       with col2:
-          for i in range(len(df_columna2)):
-            st.write(f"{[df_columna2.iloc[i][0]]}(%s)" % df_columna2.iloc[i][2])
-            st.caption(df_columna2.iloc[i][1])
-            #st.image(df_columna2.iloc[1][3], caption=df_columna2.iloc[1][2])
+        for i in range(len(df_columna2)):
+          st.write(f"{[df_columna2.iloc[i][0]]}(%s)" % df_columna2.iloc[i][2])
+          st.caption(df_columna2.iloc[i][1])
+          #st.image(df_columna2.iloc[1][3], caption=df_columna2.iloc[1][2])
 
 with st.sidebar:
   st.header('Categorias')
