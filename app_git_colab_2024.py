@@ -40,7 +40,7 @@ categorias = ['research-assistant',
  'code-assistant',
  'no-code']
 
-df=pd.read_csv('todos.csv')
+df=pd.read_csv('todos')
 #df=df.drop(columns='Unnamed: 0',axis=1)
 
 df_columna1=df.iloc[:round(len(df)/2),:]
