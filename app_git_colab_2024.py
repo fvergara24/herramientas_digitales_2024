@@ -54,13 +54,10 @@ df_columna2=df.iloc[round(len(df)/2):,:]
 
 #imagen1=df['Imagenes_url'][0]+'.jpg'
 
-left,right = st.columns(2)
-
-with right:
-  text=st.text_input('Buscar aplicaciones','')
-  text = text.lower()
+text=st.text_input('Buscar aplicaciones','')
+text = text.lower()
   
-  if text:
+if text:
       mask = df['Descripcion'].str.contains(text)
       contador=0
       for i in range(len(mask)):
@@ -75,12 +72,23 @@ with right:
         st.caption(df_busqueda.iloc[j][1])
         #st.image(df_busqueda.iloc[j][3], caption=df_busqueda.iloc[j][3], use_column_width='auto')
 
-  else:
-    for i in range(len(df)):
-      st.write(f"{[df.iloc[i][0]]}(%s)" % df.iloc[i][2])
-      st.caption(df.iloc[i][1])
-      
+else:
+      col1, col2= st.columns(2)
 
-with left:
-    st.header('Categorias')
-    st.multiselect("",categorias)
+      with col1:
+        for i in range(len(df_columna1)):
+          #original_title = '<p style="font-family:Courier; color:Blue; font-size: 20px;">f"{[df_columna1.iloc[i][0]]}(%s)" % df_columna1.iloc[i][2]</p>'
+          #st.markdown(original_title, unsafe_allow_html=True)
+          st.write(f"{[df_columna1.iloc[i][0]]}(%s)" % df_columna1.iloc[i][2])
+          st.caption(df_columna1.iloc[i][1])
+          #st.image(df_columna1.iloc[0][3], caption=df_columna1.iloc[0][3], use_column_width='auto')
+
+      with col2:
+        for i in range(len(df_columna2)):
+          st.write(f"{[df_columna2.iloc[i][0]]}(%s)" % df_columna2.iloc[i][2])
+          st.caption(df_columna2.iloc[i][1])
+          #st.image(df_columna2.iloc[1][3], caption=df_columna2.iloc[1][2])
+
+with st.sidebar:
+  st.header('Categorias')
+  st.multiselect("",categorias)
