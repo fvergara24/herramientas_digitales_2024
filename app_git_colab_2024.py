@@ -57,39 +57,41 @@ df_columna2=df.iloc[round(len(df)/2):,:]
 text=st.text_input('Buscar aplicaciones','')
 text = text.lower()
 
-if text:
-    mask = df['Descripcion'].str.contains(text)
-    contador=0
-    for i in range(len(mask)):
-      if mask.loc[i]==False:
-        contador+=1
-    if contador==len(mask):
-      st.write('No hay coincidencias')
-    df_busqueda = df[mask]
-    df_busqueda = df_busqueda.reset_index(drop=True)
-    for j in range(len(df_busqueda)):
-      st.write(f"{[df_busqueda.iloc[j][0]]}(%s)" % df_busqueda.iloc[j][2])
-      st.caption(df_busqueda.iloc[j][1])
-      #st.image(df_busqueda.iloc[j][3], caption=df_busqueda.iloc[j][3], use_column_width='auto')
+left,right = st.columns(2)
 
-else:
-    col1, col2= st.columns(2)
+with right:
+  if text:
+      mask = df['Descripcion'].str.contains(text)
+      contador=0
+      for i in range(len(mask)):
+        if mask.loc[i]==False:
+          contador+=1
+      if contador==len(mask):
+        st.write('No hay coincidencias')
+      df_busqueda = df[mask]
+      df_busqueda = df_busqueda.reset_index(drop=True)
+      for j in range(len(df_busqueda)):
+        st.write(f"{[df_busqueda.iloc[j][0]]}(%s)" % df_busqueda.iloc[j][2])
+        st.caption(df_busqueda.iloc[j][1])
+        #st.image(df_busqueda.iloc[j][3], caption=df_busqueda.iloc[j][3], use_column_width='auto')
 
-    with col1:
-      for i in range(len(df_columna1)):
-        #original_title = '<p style="font-family:Courier; color:Blue; font-size: 20px;">f"{[df_columna1.iloc[i][0]]}(%s)" % df_columna1.iloc[i][2]</p>'
-        #st.markdown(original_title, unsafe_allow_html=True)
-        st.write(f"{[df_columna1.iloc[i][0]]}(%s)" % df_columna1.iloc[i][2])
-        st.caption(df_columna1.iloc[i][1])
-        #st.image(df_columna1.iloc[0][3], caption=df_columna1.iloc[0][3], use_column_width='auto')
+  else:
+      col1, col2= st.columns(2)
 
-    with col2:
-      for i in range(len(df_columna2)):
-        st.write(f"{[df_columna2.iloc[i][0]]}(%s)" % df_columna2.iloc[i][2])
-        st.caption(df_columna2.iloc[i][1])
-        #st.image(df_columna2.iloc[1][3], caption=df_columna2.iloc[1][2])
+      with col1:
+        for i in range(len(df_columna1)):
+          #original_title = '<p style="font-family:Courier; color:Blue; font-size: 20px;">f"{[df_columna1.iloc[i][0]]}(%s)" % df_columna1.iloc[i][2]</p>'
+          #st.markdown(original_title, unsafe_allow_html=True)
+          st.write(f"{[df_columna1.iloc[i][0]]}(%s)" % df_columna1.iloc[i][2])
+          st.caption(df_columna1.iloc[i][1])
+          #st.image(df_columna1.iloc[0][3], caption=df_columna1.iloc[0][3], use_column_width='auto')
 
+      with col2:
+        for i in range(len(df_columna2)):
+          st.write(f"{[df_columna2.iloc[i][0]]}(%s)" % df_columna2.iloc[i][2])
+          st.caption(df_columna2.iloc[i][1])
+          #st.image(df_columna2.iloc[1][3], caption=df_columna2.iloc[1][2])
 
-with st.sidebar:
-  st.header('Categorias')
-  st.multiselect("",categorias)
+with left:
+    st.header('Categorias')
+    st.multiselect("",categorias)
