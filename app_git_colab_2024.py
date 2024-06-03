@@ -54,12 +54,12 @@ df_columna2=df.iloc[round(len(df)/2):,:]
 
 #imagen1=df['Imagenes_url'][0]+'.jpg'
 
-text=st.text_input('Buscar aplicaciones','')
-text = text.lower()
-
 left,right = st.columns(2)
 
 with right:
+  text=st.text_input('Buscar aplicaciones','')
+  text = text.lower()
+  
   if text:
       mask = df['Descripcion'].str.contains(text)
       contador=0
