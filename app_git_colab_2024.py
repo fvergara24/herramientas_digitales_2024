@@ -99,7 +99,7 @@ with st.sidebar:
     for i in range(len(data)):
       title = data.iloc[i][0]
       description = data.iloc[i][1]
-      st.write(f"{title}(%s)" % data.iloc[i][2])  # Assuming data has format (title, description, ...)
+      st.write(f"{data}(%s)" % data.iloc[i][2])  # Assuming data has format (title, description, ...)
       st.caption(description)
 
   # Create a dictionary to store DataFrames by category (replace with your actual data)
