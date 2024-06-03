@@ -4,33 +4,11 @@ import pandas as pd
 
 st.set_page_config(page_title='Herramientas 2024 digitales en español', page_icon='favicon.jpg')
 # st.write('↖ Categorias')
-#st.image('Logo.jpg')
+st.image('Logo.jpg')
+st.markdown("<h1 style='text-align: center; color: red;'>Herramientas digitales 2024 en español</h1>", unsafe_allow_html=True)
+
+
 #st.title('Herramientas digitales 2024 en español')
-
-st.markdown("""
-<style>
-  .title {
-    text-align: center;
-  }
-</style>
-
-<h1 class="title">Herramientas digitales 2024 en español</h1>
-""", unsafe_allow_html=True)
-
-# Load and display the image (centered using CSS)
-image_path = "Logo.jpg"  # Replace with your image path
-st.markdown(f"""
-<style>
-  .image {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 70%;  # Adjust width as needed
-  }
-</style>
-
-<img class="image" src="{image_path}" alt="Centered Image">
-""", unsafe_allow_html=True)
 
 categorias = ['research-assistant',
  'translators',
