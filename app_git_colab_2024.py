@@ -46,7 +46,7 @@ categorias = ['research-assistant',
  'code-assistant',
  'no-code']
 
-st.selectbox("",categorias)
+st.multiselect("",categorias)
 
 
 df=pd.read_csv('todos')
@@ -59,8 +59,6 @@ df_columna2=df.iloc[round(len(df)/2):,:]
 
 text=st.text_input('Buscar aplicaciones','')
 text = text.lower()
-
-
 
 if text:
     mask = df['Descripcion'].str.contains(text)
