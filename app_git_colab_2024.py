@@ -104,8 +104,8 @@ with st.sidebar:
 
   # Create a dictionary to store DataFrames by category (replace with your actual data)
   data_by_category = {
-                     'research-assistant':research-assistant
-                     'translators':translators
+                     'research-assistant':research-assistant,
+                     'translators':translators,
                      'presentations':presentations
                       }
 
