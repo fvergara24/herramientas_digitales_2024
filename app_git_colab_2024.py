@@ -88,7 +88,7 @@ else:
 
 with st.sidebar:
   st.header('Categorias')
-  st.multiselect("",categorias)
+  st.selectbox("",categorias)
   def display_category(data, category_name):
     """Displays a category's data (title, description) within a Streamlit card.
 
