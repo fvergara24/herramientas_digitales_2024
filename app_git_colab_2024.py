@@ -2,17 +2,12 @@
 import streamlit as st
 import pandas as pd
 
+st.markdown("<h1 style='text-align: center; color: blue;'>Herramientas digitales 2024     en español</h1>", unsafe_allow_html=True)
 st.set_page_config(page_title='Herramientas 2024 digitales en español', page_icon='favicon.jpg')
-# st.write('↖ Categorias')
-#st.image('Logo.jpg')
 
 left_co, cent_co,last_co = st.columns(3)
 with cent_co:
     st.image('Logo.jpg')
-
-st.markdown("<h1 style='text-align: center; color: blue;'>Herramientas digitales 2024     en español</h1>", unsafe_allow_html=True)
-
-#st.title('Herramientas digitales 2024 en español')
 
 categorias = ['research-assistant',
  'translators',
