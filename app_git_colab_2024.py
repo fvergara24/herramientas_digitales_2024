@@ -62,8 +62,8 @@ if text:
           contador+=1
       if contador==len(mask):
         st.write('No hay coincidencias')
-      df_busqueda = df[mask]
-      df_busqueda = df_busqueda.reset_index(drop=True)
+      df_busqueda_mask = df[mask]
+      df_busqueda = df_busqueda_mask.reset_index(drop=True)
       for j in range(len(df_busqueda)):
         st.write(f"{[df_busqueda.iloc[j][0]]}(%s)" % df_busqueda.iloc[j][2])
         st.caption(df_busqueda.iloc[j][1])
